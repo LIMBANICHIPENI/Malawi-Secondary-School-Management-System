@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const links = [
-    "Announcements",
-    "Resources",
-    "Grades",
-    "Assignments",
-    "Students",
-    "Collaboration",
+    { name: "Dashboard", path: "/" },
+    { name: "Grades", path: "/grades" },
+    { name: "Assignments", path: "/assignments" },
+    { name: "Resources", path: "/resources" },
+    { name: "Students", path: "/students" },
   ];
 
   return (
@@ -15,11 +15,13 @@ const Sidebar = () => {
       <h2 className="text-2xl font-bold mb-8">Teacher Dashboard</h2>
       <ul>
         {links.map((link) => (
-          <li
-            key={link}
-            className="mb-4 hover:bg-indigo-700 p-2 rounded cursor-pointer transition"
-          >
-            {link}
+          <li key={link.name} className="mb-4">
+            <Link
+              to={link.path}
+              className="block hover:bg-indigo-700 p-2 rounded cursor-pointer transition"
+            >
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>
