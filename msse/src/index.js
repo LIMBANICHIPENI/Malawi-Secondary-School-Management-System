@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Layouts from './Layouts/Layouts.jsx';  // Import Layouts
-import './Components/TeacherDashboard/TeacherDashboard.css';  // Keep if needed
-import './index.css';  // Ensure this exists for Tailwind
+import App from './App';  // Import the App component we created
+import './index.css';  // Tailwind CSS
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Layouts />  // Render Layouts
+    <App />
   </React.StrictMode>
 );
